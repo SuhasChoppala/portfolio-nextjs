@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -7,30 +7,62 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { cn } from "@/lib/utils";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import Link from "next/link";
+import { LayoutGrid, Briefcase, Layers, User, Mail } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  projects: LayoutGrid,
+  experiences: Briefcase,
+  stacks: Layers,
+  about: User,
+  contact: Mail,
+};
 
 export const Navbar = ({
   navItems,
   className,
 }: {
-  navItems: {
+  navItems: readonly {
     name: string;
     link: string;
-    icon?: React.ReactNode;
+    icon: keyof typeof ICON_MAP;
   }[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      const direction = current - (scrollYProgress.getPrevious() ?? 0);
+  // Show navbar immediately if page has no scroll
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
-      } else {
-        setVisible(direction < 0);
-      }
+    const hasScroll =
+      document.documentElement.scrollHeight > window.innerHeight;
+
+    if (!hasScroll) {
+      setVisible(true);
+    }
+  }, []);
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    if (typeof current !== "number") return;
+
+    const hasScroll =
+      document.documentElement.scrollHeight > window.innerHeight;
+
+    if (!hasScroll) {
+      setVisible(true);
+      return;
+    }
+
+    const direction = current - (scrollYProgress.getPrevious() ?? 0);
+
+    if (scrollYProgress.get() < 0.05) {
+      setVisible(false);
+    } else {
+      setVisible(direction < 0);
     }
   });
 
@@ -41,16 +73,48 @@ export const Navbar = ({
         animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.2 }}
         className={cn(
-          "fixed top-6 left-1/2 -translate-x-1/2 flex items-center gap-6 rounded-full bg-white dark:bg-black px-8 py-2 shadow z-[5000]",
+          `
+          fixed left-1/2 -translate-x-1/2 z-[5000] bg-background
+          flex items-center justify-center
+          rounded-full shadow
+
+          /* sizing */
+          w-[86vw] max-w-sm px-5 py-2.5
+          md:w-auto md:min-w-[480px] md:px-8 md:py-2
+
+          /* spacing */
+          gap-8 md:gap-6
+
+          /* positioning */
+          bottom-6
+          md:bottom-auto md:top-6
+          `,
           className,
         )}
       >
-        {navItems.map((navItem, idx) => (
-          <a key={idx} href={navItem.link} className="flex items-center gap-1">
-            <span className="sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </a>
-        ))}
+        <div className="relative flex w-full items-center justify-center gap-8">
+          {navItems.map((navItem, idx) => {
+            const Icon = ICON_MAP[navItem.icon];
+
+            return (
+              <Link
+                key={idx}
+                href={navItem.link}
+                className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition"
+              >
+                {/* Mobile: icon only */}
+                <span className="md:hidden">
+                  <Icon size={20} />
+                </span>
+
+                {/* Desktop: text */}
+                <span className="hidden md:block text-sm">{navItem.name}</span>
+              </Link>
+            );
+          })}
+
+          <AnimatedThemeToggler />
+        </div>
       </motion.div>
     </AnimatePresence>
   );

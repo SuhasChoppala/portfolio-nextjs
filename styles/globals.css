@@ -208,3 +208,8 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}

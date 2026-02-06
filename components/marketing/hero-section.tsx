@@ -3,6 +3,7 @@ import { SOCIAL_LINKS } from "@/constants/links";
 import Image from "next/image";
 import Wrapper from "../global/wrapper";
 import Container from "../global/container";
+import Link from "next/link";
 
 export default function HeroSectionTwo() {
   return (
@@ -81,14 +82,14 @@ export default function HeroSectionTwo() {
                 <Container className="mt-4 flex flex-col items-center justify-center gap-2 md:flex-row">
                   <div className="mt-4 flex justify-center gap-4 lg:justify-start">
                     {SOCIAL_LINKS.map(({ name, link, icon: Icon }) => (
-                      <a
+                      <Link
                         key={name}
                         href={link}
                         target={name !== "mail" ? "_blank" : undefined}
                         className="p-2 text-muted-foreground transition hover:text-foreground"
                       >
                         <Icon size={20} />
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </Container>
