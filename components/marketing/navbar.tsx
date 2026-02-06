@@ -77,15 +77,9 @@ export const Navbar = ({
           fixed left-1/2 -translate-x-1/2 z-[5000] bg-background
           flex items-center justify-center
           rounded-full shadow
-
-          /* sizing */
           w-[86vw] max-w-sm px-5 py-2.5
           md:w-auto md:min-w-[480px] md:px-8 md:py-2
-
-          /* spacing */
           gap-8 md:gap-6
-
-          /* positioning */
           bottom-6
           md:bottom-auto md:top-6
           `,

@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function HeroSectionTwo() {
   return (
     <>
-      <Wrapper className="overflow-hidden bg-background">
+      <main className="overflow-hidden bg-background">
         <div
           aria-hidden
           className="absolute inset-0 isolate opacity-65 contain-strict lg:block"
@@ -97,7 +97,7 @@ export default function HeroSectionTwo() {
             </div>
           </div>
         </Wrapper>
-      </Wrapper>
+      </main>
     </>
   );
 }
