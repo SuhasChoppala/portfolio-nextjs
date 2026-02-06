@@ -14,7 +14,9 @@ export default function HeroSection() {
                 <h3 className="text-sm">Full Stack Developer</h3>
               </div>
 
-              <h1 className="mt-4 text-lg md:text-4xl mb-4">Suhas Choppala</h1>
+              <h1 className="mt-4 font-semibold text-lg md:text-4xl mb-4">
+                Suhas Choppala
+              </h1>
 
               <p className="mt-4 text-base text-muted-foreground">
                 Crafting exceptional digital experiences with modern

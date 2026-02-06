@@ -8,8 +8,8 @@ export default function MarketingLayout({
 }) {
   return (
     <main className="w-full grow relative">
-      <Navbar navItems={NAV_LINKS} />
       {children}
+      <Navbar navItems={NAV_LINKS} />
     </main>
   );
 }

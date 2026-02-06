@@ -31,7 +31,7 @@ export const Experiences = ({ data }: { data: TimelineEntry[] }) => {
     <div ref={containerRef} className="mx-auto max-w-5xl px-6 py-10">
       {/* Section Header */}
       <div className="py-10">
-        <h2 className="mb-4 text-lg md:text-4xl font-semibold text-black dark:text-white">
+        <h2 className="mb-4 font-semibold text-lg md:text-4xl">
           My Experiences
         </h2>
         <p className="max-w-sm text-sm md:text-base text-neutral-700 dark:text-neutral-300">
