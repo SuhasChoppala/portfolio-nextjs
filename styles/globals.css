@@ -191,6 +191,11 @@
   }
 }
 
+/* globals.css */
+.container {
+  @apply mx-auto max-w-2xl;
+}
+
 h1,
 h2,
 h3,

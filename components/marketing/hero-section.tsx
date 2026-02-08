@@ -4,10 +4,12 @@ import Image from "next/image";
 import Wrapper from "../global/wrapper";
 import Container from "../global/container";
 import Link from "next/link";
+import { BackgroundBeams } from "../ui/background-beams";
+import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision";
 
-export default function HeroSectionTwo() {
+export default function HeroSection() {
   return (
-    <main className="min-h-screen bg-background overflow-hidden">
+    <main className="relative min-h-screen bg-background overflow-hidden">
       <Wrapper>
         <div className="relative min-h-screen flex items-center justify-center">
           <div className="mx-auto max-w-7xl px-6">

@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen text-foreground font-base antialiased",
+          "min-h-screen text-foreground font-base antialiased container",
           base.variable,
           heading.variable,
         )}
