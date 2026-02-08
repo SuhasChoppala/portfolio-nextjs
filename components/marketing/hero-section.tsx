@@ -4,12 +4,14 @@ import Image from "next/image";
 import Wrapper from "../global/wrapper";
 import Container from "../global/container";
 import Link from "next/link";
-import { BackgroundBeams } from "../ui/background-beams";
-import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision";
+import { ShootingStars } from "../ui/shooting-stars";
+import { StarsBackground } from "../ui/stars-background";
 
 export default function HeroSection() {
   return (
     <main className="relative min-h-screen bg-background overflow-hidden">
+      <ShootingStars />
+      <StarsBackground />
       <Wrapper>
         <div className="relative min-h-screen flex items-center justify-center">
           <div className="mx-auto max-w-7xl px-6">
