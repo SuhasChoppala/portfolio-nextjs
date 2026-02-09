@@ -84,7 +84,7 @@ export default function ExpandableProjects() {
                   <div className="space-y-1">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold"
+                      className="font-bold text-xl"
                     >
                       {active.title}
                     </motion.h3>

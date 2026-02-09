@@ -204,6 +204,10 @@
   @apply h-9 w-9 rounded-full bg-zinc-500/70 border border-white/10 p-1.5 backdrop-blur-sm transition group-hover:z-20 group-hover:scale-105;
 }
 
+.glowBorder {
+  @apply border-ring/50 transition-all duration-300 hover:border-ring hover:shadow-[0_0_0_1px_var(--color-ring),0_0_30px_-10px_var(--color-ring)];
+}
+
 h1,
 h2,
 h3,

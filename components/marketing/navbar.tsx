@@ -40,7 +40,7 @@ export const Navbar = ({
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         `
-        fixed left-1/2 -translate-x-1/2 z-[5000] bg-card border border-border
+        fixed left-1/2 -translate-x-1/2 z-[5000] bg-background border border-ring/30
         flex items-center justify-center
         rounded-full shadow
         w-[94vw] max-w-sm px-5 py-2.5

@@ -26,11 +26,14 @@ export const ExperiencesComp = ({ data }: { data: Experiences[] }) => {
       {/* Experiences list */}
       <div className="max-w-4xl mx-auto px-4 pb-20 space-y-16">
         {data.map((exp, index) => (
-          <div key={index} className="space-y-4 bg-card p-8 rounded-md border">
+          <div
+            key={index}
+            className="space-y-4 bg-card p-8 rounded-md border glowBorder"
+          >
             {/* Role + Company + Date */}
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
               <h3 className="text-lg font-semibold">
-                {exp.role}{" "}
+                {exp.role}
                 <span className="text-muted-foreground font-medium">
                   @ {exp.company}
                 </span>

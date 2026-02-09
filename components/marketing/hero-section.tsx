@@ -17,8 +17,8 @@ export default function HeroSection() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
               <Container>
-                <div className="mx-auto w-max rounded-full bg-card px-3 py-1.5 border">
-                  <p className="text-sm text-card-foreground">
+                <div className="mx-auto w-max rounded-full bg-primary/70 border border-border text-primary-foreground px-3 py-1.5">
+                  <p className="text-sm  text-primary-foreground">
                     Full Stack Developer
                   </p>
                 </div>
