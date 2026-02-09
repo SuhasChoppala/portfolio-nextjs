@@ -6,7 +6,7 @@ export const NAV_LINKS = [
   { name: "Experiences", link: "/experiences", icon: "experiences" },
   { name: "Stacks", link: "/stacks", icon: "stacks" },
   { name: "About", link: "/about", icon: "about" },
-  { name: "Contact", link: "/contact", icon: "contact" },
+  // { name: "Contact", link: "/contact", icon: "contact" },
 ] as const;
 
 export const SOCIAL_LINKS = [
