@@ -40,19 +40,25 @@ export const Navbar = ({
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         `
-        fixed left-1/2 -translate-x-1/2 z-[5000] bg-background border border-ring/30
-        flex items-center justify-center
-        rounded-full shadow
-        w-[94vw] max-w-sm px-5 py-2.5
-        md:w-auto md:min-w-[560px] md:px-8 md:py-2
-        gap-8 md:gap-6
-        bottom-6
-        md:bottom-auto md:top-6
-        `,
+          fixed z-[5000]
+          flex items-center justify-center
+
+          bg-background/80 backdrop-blur-xl
+          border-t border-border/40 shadow-lg
+
+          bottom-0 left-0 right-0 w-full
+          px-4 py-4 rounded-none
+
+          md:bottom-auto md:top-6
+          md:left-1/2 md:-translate-x-1/2
+          md:w-auto md:max-w-fit
+          md:px-6 md:py-2
+          md:rounded-full md:border md:border-border/40
+          `,
         className,
       )}
     >
-      <div className="relative flex w-full items-center justify-center gap-8">
+      <div className="relative flex w-full items-center justify-between md:justify-center md:gap-6">
         {navItems.map((navItem, idx) => {
           const Icon = ICON_MAP[navItem.icon];
 
@@ -60,20 +66,33 @@ export const Navbar = ({
             <Link
               key={idx}
               href={navItem.link}
-              className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition"
+              className={cn(
+                "flex flex-col md:flex-row items-center justify-center gap-1",
+                "text-muted-foreground hover:text-foreground transition-colors",
+                "min-w-[60px] md:min-w-0",
+              )}
             >
-              {/* Mobile */}
+              {/* Mobile: Icon + Label */}
               <span className="md:hidden">
-                <Icon size={20} />
+                <Icon size={20} strokeWidth={1.5} />
+              </span>
+              <span className="md:hidden text-[10px] font-medium">
+                {navItem.name}
               </span>
 
-              {/* Desktop */}
+              {/* Desktop: Text only */}
               <span className="hidden md:block text-sm">{navItem.name}</span>
             </Link>
           );
         })}
 
-        <AnimatedThemeToggler />
+        {/* Separator */}
+        <div className="h-8 w-px bg-border/60 mx-2 md:mx-0" />
+
+        {/* Theme toggle */}
+        <div className="md:ml-0">
+          <AnimatedThemeToggler />
+        </div>
       </div>
     </motion.div>
   );

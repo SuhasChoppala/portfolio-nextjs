@@ -30,6 +30,15 @@ export default function ExpandableProjects() {
 
   return (
     <>
+      {/* Header */}
+      <div className="max-w-7xl mx-auto py-10 px-4 text-center md:px-8 lg:px-10">
+        <h2 className="text-2xl font-semibold md:text-4xl mb-4 max-w-4xl mx-auto">
+          Featured Projects
+        </h2>
+        <p className="text-sm md:text-base text-muted-foreground">
+          Explore my gallery of the latest projects and practical creations
+        </p>
+      </div>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div

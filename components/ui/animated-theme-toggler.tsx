@@ -74,7 +74,10 @@ export const AnimatedThemeToggler = ({
     <button
       ref={buttonRef}
       onClick={toggleTheme}
-      className={cn("cursor-pointer text-muted-foreground", className)}
+      className={cn(
+        "cursor-pointer text-muted-foreground flex items-center",
+        className,
+      )}
       {...props}
     >
       {isDark ? (
