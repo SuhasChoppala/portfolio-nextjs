@@ -4,6 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { ProjectsData } from "@/constants/projects";
+import { AnimatedTooltip } from "../ui/animated-tooltip";
 
 export default function ExpandableProjects() {
   type Project = (typeof ProjectsData)[number];
@@ -35,7 +36,7 @@ export default function ExpandableProjects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            className="fixed inset-0 bg-background h-full w-full z-10"
           />
         )}
       </AnimatePresence>
@@ -65,7 +66,7 @@ export default function ExpandableProjects() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col border bg-card sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -83,17 +84,21 @@ export default function ExpandableProjects() {
                   <div className="space-y-1">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200"
+                      className="font-bold"
                     >
                       {active.title}
                     </motion.h3>
 
                     <motion.p
                       layoutId={`description-${active.title}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
+                      className="text-sm text-muted-foreground"
                     >
                       {active.description[0]}
                     </motion.p>
+                  </div>
+
+                  <div>
+                    <AnimatedTooltip items={active.technologies} />
                   </div>
 
                   {/* Links */}
@@ -110,9 +115,9 @@ export default function ExpandableProjects() {
                             px-4 py-2
                             text-sm
                             rounded-full
-                            bg-neutral-800
-                            text-white
-                            hover:bg-neutral-700
+                            bg-background
+                            border
+                            hover:bg-secondary
                             transition
                           "
                         >
@@ -134,19 +139,20 @@ export default function ExpandableProjects() {
             layoutId={`card-${project.title}-${id}`}
             key={`card-${project.title}-${id}`}
             onClick={() => setActive(project)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div
                 layoutId={`image-${project.title}-${id}`}
-                className="shrink-0"
+                className="shrink-0 flex justify-center md:justify-start"
               >
                 <img
                   src={project.thumbnailImg}
                   alt={project.title}
                   className="
-                    h-16 w-16
-                    rounded-lg
+                    h-42 w-42          
+                    md:h-16 md:w-16  
+                    rounded-xl
                     object-cover
                     ring-1 ring-white/10
                     bg-neutral-900
@@ -170,7 +176,7 @@ export default function ExpandableProjects() {
             </div>
             <motion.button
               layoutId={`button-${project.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 py-2 text-sm rounded-full font-semibold bg-card cursor-pointer border text-muted-foreground mt-4 md:mt-0"
             >
               View
             </motion.button>

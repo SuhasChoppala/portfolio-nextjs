@@ -13,9 +13,8 @@ interface Experiences {
 
 export const ExperiencesComp = ({ data }: { data: Experiences[] }) => {
   return (
-    <div className="w-full md:py-10">
-      {/* Header */}
-      <div className="max-w-7xl mx-auto py-10 md:py-20 px-4 text-center md:px-8 lg:px-10">
+    <div className="w-full">
+      <div className="max-w-7xl mx-auto py-10 md:py-10 px-4 text-center md:px-8 lg:px-10">
         <h2 className="text-2xl font-semibold md:text-4xl mb-4 max-w-4xl mx-auto">
           My Experiences
         </h2>

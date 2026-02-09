@@ -35,7 +35,7 @@ export const AnimatedTooltip = ({ items }: { items: TechItem[] }) => {
   };
 
   return (
-    <div className="mt-4 flex items-center">
+    <div className="py-4 flex items-center">
       {items.map((item, idx) => (
         <div
           key={item.name}

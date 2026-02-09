@@ -7,9 +7,9 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="w-full grow relative">
-      {children}
+    <main className="w-full grow relative pb-10 md:pb-0 md:pt-24">
       <Navbar navItems={NAV_LINKS} />
+      {children}
     </main>
   );
 }
