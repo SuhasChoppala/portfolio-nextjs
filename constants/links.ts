@@ -1,6 +1,7 @@
-import { GithubIcon, LinkedinIcon, Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon, Mail, HomeIcon } from "lucide-react";
 
 export const NAV_LINKS = [
+  { name: "Home", link: "/", icon: "home" },
   { name: "Projects", link: "/projects", icon: "projects" },
   { name: "Experiences", link: "/experiences", icon: "experiences" },
   { name: "Stacks", link: "/stacks", icon: "stacks" },

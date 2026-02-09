@@ -3,10 +3,18 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import Link from "next/link";
-import { LayoutGrid, Briefcase, Layers, User, Mail } from "lucide-react";
+import {
+  LayoutGrid,
+  Briefcase,
+  Layers,
+  User,
+  Mail,
+  HomeIcon,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
+  home: HomeIcon,
   projects: LayoutGrid,
   experiences: Briefcase,
   stacks: Layers,
@@ -32,11 +40,11 @@ export const Navbar = ({
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         `
-        fixed left-1/2 -translate-x-1/2 z-[5000] bg-card border
+        fixed left-1/2 -translate-x-1/2 z-[5000] bg-card border border-border
         flex items-center justify-center
         rounded-full shadow
-        w-[86vw] max-w-sm px-5 py-2.5
-        md:w-auto md:min-w-[480px] md:px-8 md:py-2
+        w-[94vw] max-w-sm px-5 py-2.5
+        md:w-auto md:min-w-[560px] md:px-8 md:py-2
         gap-8 md:gap-6
         bottom-6
         md:bottom-auto md:top-6

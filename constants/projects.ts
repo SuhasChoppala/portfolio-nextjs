@@ -7,6 +7,8 @@ export const ProjectsData = [
     description: [
       "A scalable HRMS platform featuring role-based access, dynamic routing, and seamless REST API integration, with reusable modules for employee, leave, and profile management optimized using Redux Toolkit.",
     ],
+    summary:
+      "Role-based HR management system with scalable, modular architecture.",
     links: [
       {
         name: "github",
@@ -44,6 +46,7 @@ export const ProjectsData = [
     description: [
       "A full-stack todo application built with Next.js Safe Server Actions and Payload CMS Local API, featuring protected server actions. structured collections with Admin Panel control, lifecycle hooks for enforced business logic, and a maintainable MongoDB-backed backend architecture.",
     ],
+    summary: "Full-stack todo app using Next.js and Payload CMS.",
     links: [
       {
         name: "github",

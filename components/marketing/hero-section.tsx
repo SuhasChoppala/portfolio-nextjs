@@ -73,7 +73,7 @@ export default function HeroSection() {
                       key={name}
                       href={link}
                       target={name !== "mail" ? "_blank" : undefined}
-                      className="p-2 text-muted-foreground transition hover:text-foreground"
+                      className="p-2 text-muted-foreground transition hover:text-primary"
                     >
                       <Icon size={20} />
                     </Link>

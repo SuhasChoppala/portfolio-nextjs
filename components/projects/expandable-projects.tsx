@@ -115,9 +115,10 @@ export default function ExpandableProjects() {
                             px-4 py-2
                             text-sm
                             rounded-full
-                            bg-background
+                            bg-primary
+                            text-primary-foreground
                             border
-                            hover:bg-secondary
+                            border-border
                             transition
                           "
                         >
@@ -139,7 +140,7 @@ export default function ExpandableProjects() {
             layoutId={`card-${project.title}-${id}`}
             key={`card-${project.title}-${id}`}
             onClick={() => setActive(project)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-accent/40 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div
@@ -166,17 +167,11 @@ export default function ExpandableProjects() {
                 >
                   {project.title}
                 </motion.h3>
-                <motion.p
-                  layoutId={`description-${project.title}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
-                >
-                  {project.title}
-                </motion.p>
               </div>
             </div>
             <motion.button
               layoutId={`button-${project.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-semibold bg-card cursor-pointer border text-muted-foreground mt-4 md:mt-0"
+              className="px-4 py-2 text-sm rounded-full font-semibold bg-primary/70 cursor-pointer border border-border text-primary-foreground mt-4 md:mt-0 hover:bg-primary"
             >
               View
             </motion.button>
