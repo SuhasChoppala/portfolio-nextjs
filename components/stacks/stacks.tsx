@@ -22,7 +22,6 @@ export const Stacks = () => {
             key={index}
             className="space-y-6 bg-card p-8 rounded-md border glowBorder"
           >
-            {/* ✅ Section label */}
             <h3 className="text-lg font-medium text-foreground">
               {stack.label}
             </h3>

@@ -12,17 +12,17 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: "github",
-    link: "https://github.com/yourusername",
+    link: "https://github.com/SuhasChoppala",
     icon: GithubIcon,
   },
   {
     name: "linkedin",
-    link: "https://linkedin.com/in/yourusername",
+    link: "https://www.linkedin.com/in/suhas-choppala-9321b8218/",
     icon: LinkedinIcon,
   },
   {
     name: "mail",
-    link: "mailto:youremail@example.com",
+    link: "mailto:choppalasuhas.02@gmail.com",
     icon: Mail,
   },
 ] as const;

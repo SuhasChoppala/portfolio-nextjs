@@ -17,8 +17,8 @@ export default function HeroSection() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
               <Container>
-                <div className="mx-auto w-max rounded-full bg-primary/70 border border-border text-primary-foreground px-3 py-1.5">
-                  <p className="text-sm  text-primary-foreground">
+                <div className="mx-auto w-max rounded-full bg-card border glowBorder px-3 py-1.5">
+                  <p className="text-sm  text-foreground">
                     Full Stack Developer
                   </p>
                 </div>
@@ -49,7 +49,7 @@ export default function HeroSection() {
                 preset="fade-in-blur"
                 speedSegment={0.3}
                 as="h1"
-                className="mx-auto mt-4 max-w-4xl text-balance text-center text-5xl md:text-6xl font-semibold tracking-tight text-foreground"
+                className="mx-auto mt-4 max-w-4xl text-balance text-center text-5xl md:text-6xl font-semibold tracking-tight text-primary/70"
               >
                 Suhas Choppala
               </TextEffect>

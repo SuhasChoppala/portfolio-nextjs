@@ -43,7 +43,7 @@ export const Navbar = ({
           fixed z-[5000]
           flex items-center justify-center
 
-          bg-background/80 backdrop-blur-xl
+          bg-card backdrop-blur-xl
           border-t border-border/40 shadow-lg
 
           bottom-0 left-0 right-0 w-full
@@ -68,7 +68,7 @@ export const Navbar = ({
               href={navItem.link}
               className={cn(
                 "flex flex-col md:flex-row items-center justify-center gap-1",
-                "text-muted-foreground hover:text-foreground transition-colors",
+                "text-foreground hover:text-primary transition-colors",
                 "min-w-[60px] md:min-w-0",
               )}
             >

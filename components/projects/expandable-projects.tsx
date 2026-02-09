@@ -75,7 +75,7 @@ export default function ExpandableProjects() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col border bg-card sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col border border-border bg-card sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -130,10 +130,10 @@ export default function ExpandableProjects() {
                             px-4 py-2
                             text-sm
                             rounded-full
-                            bg-primary
-                            text-primary-foreground
+                            bg-card
+                            text-foreground
                             border
-                            border-border
+                            glowBorder
                             transition
                           "
                         >
