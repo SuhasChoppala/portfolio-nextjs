@@ -14,6 +14,10 @@ export const TechStacksData = [
         name: "JavaScript",
         icon: "/projects/technologies/javascript.svg",
       },
+      {
+        name: "TypeScript",
+        icon: "/projects/technologies/typescript.svg",
+      },
     ],
   },
   {
@@ -24,7 +28,7 @@ export const TechStacksData = [
         icon: "/projects/technologies/reactjs.svg",
       },
       {
-        name: "Redux",
+        name: "Redux Toolkit",
         icon: "/projects/technologies/reduxToolkit.svg",
       },
       {

@@ -36,7 +36,7 @@ export const ProjectsData = [
       },
       {
         name: "Redux Toolkit",
-        image: "/projects/technologies/reduxtoolkit.svg",
+        image: "/projects/technologies/reduxToolkit.svg",
       },
     ],
   },
